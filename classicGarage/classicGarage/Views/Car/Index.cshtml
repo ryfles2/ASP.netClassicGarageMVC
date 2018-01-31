@@ -1,0 +1,118 @@
+﻿@model IEnumerable<classicGarage.Models.CarModels>
+@using classicGarage.Models;
+@{
+    ViewBag.Title = "Index";
+}
+<font color="orange">
+    <h2>Cars</h2>
+</font>
+
+@if (User.Identity.IsAuthenticated)
+{
+    @Html.ActionLink("Create New", "Create")
+}
+else
+{
+    <h4>Login to add</h4>
+        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+
+
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Owner
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DatePurchase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateSale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchasePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SellingPrice)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.owner.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePurchase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateSale)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchasePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SellingPrice)
+            </td>
+            @if (item.owner.Email == User.Identity.Name)
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                   
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+
+            }
+        
+              @Html.ActionLink("Details", "Details", new { id = item.ID });
+            
+          <tr>
+            <td>
+                @{
+                    String url = item.PhotoAdress;
+
+
+                }
+                <img src="@url" />
+            </td>
+        </tr>
+        </tr>
+                    }
+
+</table>

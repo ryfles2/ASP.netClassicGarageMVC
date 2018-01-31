@@ -1,0 +1,74 @@
+﻿@model classicGarage.Models.PartModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PartModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Car.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Car.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CatNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CatNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchasePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchasePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SellingPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellingPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatePurchase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatePurchase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateSale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateSale)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
