@@ -12,6 +12,7 @@ namespace classicGarage.Models
         public String Name { get; set; }
         public String Desciption { get; set; }
         public double RepairCost { get; set; }
+        public String Mail { get; set; }
 
         public virtual CarModels Car { get; set; }
     }

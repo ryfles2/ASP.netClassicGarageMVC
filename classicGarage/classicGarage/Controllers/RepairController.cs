@@ -53,6 +53,7 @@ namespace classicGarage.Controllers
         {
             if (ModelState.IsValid)
             {
+                repairModels.Mail = User.Identity.Name; 
                 db.Repair.Add(repairModels);
                 db.SaveChanges();
                 return RedirectToAction("Index");

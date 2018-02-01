@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<classicGarage.Models.CarModels>
 @using classicGarage.Models;
+
 @{
     ViewBag.Title = "Index";
 }
@@ -90,17 +91,23 @@ else
             <td>
                 @Html.DisplayFor(modelItem => item.SellingPrice)
             </td>
+          
+            <td>
+                
+                @Html.ActionLink("Details", "Details", new { id = item.ID });
+                
+            </td>
             @if (item.owner.Email == User.Identity.Name)
             {
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                   
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID });
                 </td>
 
             }
         
-              @Html.ActionLink("Details", "Details", new { id = item.ID });
+              
             
           <tr>
             <td>

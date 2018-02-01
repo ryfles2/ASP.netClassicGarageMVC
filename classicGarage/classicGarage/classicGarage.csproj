@@ -213,6 +213,18 @@
     <Compile Include="Migrations\201801312223580_FirstMig2.Designer.cs">
       <DependentUpon>201801312223580_FirstMig2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801312344194_FirstMig3.cs" />
+    <Compile Include="Migrations\201801312344194_FirstMig3.Designer.cs">
+      <DependentUpon>201801312344194_FirstMig3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802010118037_FirstMig4.cs" />
+    <Compile Include="Migrations\201802010118037_FirstMig4.Designer.cs">
+      <DependentUpon>201802010118037_FirstMig4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802010121290_FirstMig5.cs" />
+    <Compile Include="Migrations\201802010121290_FirstMig5.Designer.cs">
+      <DependentUpon>201802010121290_FirstMig5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdModels.cs" />
@@ -336,6 +348,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801312223580_FirstMig2.resx">
       <DependentUpon>201801312223580_FirstMig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801312344194_FirstMig3.resx">
+      <DependentUpon>201801312344194_FirstMig3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802010118037_FirstMig4.resx">
+      <DependentUpon>201802010118037_FirstMig4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802010121290_FirstMig5.resx">
+      <DependentUpon>201802010121290_FirstMig5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

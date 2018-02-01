@@ -53,6 +53,7 @@ namespace classicGarage.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 db.Part.Add(partModels);
                 db.SaveChanges();
                 return RedirectToAction("Index");

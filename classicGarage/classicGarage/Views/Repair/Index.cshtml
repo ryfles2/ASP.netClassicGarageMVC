@@ -28,7 +28,7 @@
 
 @foreach (var item in Model) {
     <tr>
-        @if (item. == User.Identity.Name)
+        @if (item.Mail == User.Identity.Name)
         {
             <td>
                 @Html.DisplayFor(modelItem => item.Car.Brand)

@@ -15,6 +15,7 @@ namespace classicGarage.Controllers
     public class CarController : Controller
     {
         private GarageContext db = new GarageContext();
+       
 
         // GET: Car
         public ActionResult Index()
@@ -41,7 +42,7 @@ namespace classicGarage.Controllers
         // GET: Car/Create
         public ActionResult Create()
         {
-            ViewBag.OwnerID = new SelectList(db.Owner, "ID", "FirstName");
+            ViewBag.OwnerID = new SelectList(db.Owner.Where(u => u.Email == User.Identity.Name), "ID", "FirstName");
             return View();
         }
 
@@ -67,14 +68,13 @@ namespace classicGarage.Controllers
             if (Session["Owner"] != null)
             {
                 //var owner = new OwnerModels();
-                OwnerModels p1 = (OwnerModels)Session["Owner"];
-                carModels.OwnerID = p1.ID;
-                carModels.Name = p1.FirstName;
+                //OwnerModels p1 = (OwnerModels)Session["Owner"];
+                //carModels.OwnerID = p1.ID;
+                //carModels.Name = p1.FirstName;
             }
 
             if (ModelState.IsValid)
             {
-
                 db.Car.Add(carModels);
                 db.SaveChanges();
 
