@@ -23,6 +23,9 @@ else
 <table class="table">
     <tr>
         <th>
+            
+        </th>
+        <th>
             Owner
         </th>
         <th>
@@ -59,7 +62,16 @@ else
 
     @foreach (var item in Model)
     {
+
         <tr>
+            <td>
+                @{
+                    String url = item.PhotoAdress;
+
+
+                }
+                <img src="@url" height="300" width="500">
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.owner.FirstName)
             </td>
@@ -94,30 +106,30 @@ else
           
             <td>
                 
-                @Html.ActionLink("Details", "Details", new { id = item.ID });
+               
                 
             </td>
-            @if (item.owner.Email == User.Identity.Name)
-            {
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID });
-                </td>
-
-            }
-        
-              
             
+                @if (item.owner.Email == User.Identity.Name)
+                {
+                    <td>
+                        @Html.ActionLink("Details", "DetailsOwner", new { id = item.ID }) |
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+
+                     </td>
+                 }
+                 else
+                 {
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.ID });
+                </td>
+                 }
+            
+
+
           <tr>
-            <td>
-                @{
-                    String url = item.PhotoAdress;
-
-
-                }
-                <img src="@url" />
-            </td>
+           
         </tr>
         </tr>
                     }

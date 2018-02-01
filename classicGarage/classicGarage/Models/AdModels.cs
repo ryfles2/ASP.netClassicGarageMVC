@@ -11,6 +11,8 @@ namespace classicGarage.Models
         public int CarID { get; set; }
         public bool Active { get; set; }
 
+        public String Mail { get; set; }
+
         public virtual CarModels Car { get; set; }
     }
 }

@@ -40,7 +40,14 @@ namespace classicGarage.Controllers
         // GET: Part/Create
         public ActionResult Create()
         {
-            ViewBag.CarID = new SelectList(db.Car, "ID", "Brand");
+            
+            var x = db.Owner.Where(u => u.Email == User.Identity.Name);
+            int z = 0;
+            foreach (OwnerModels s in x)
+            {
+                z = s.ID;
+            }
+                ViewBag.CarID = new SelectList(db.Car.Where(u => u.OwnerID == z), "ID", "Brand");
             return View();
         }
 
@@ -75,7 +82,14 @@ namespace classicGarage.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CarID = new SelectList(db.Car, "ID", "Brand", partModels.CarID);
+            /////////////////////////////////////////
+            var x = db.Owner.Where(u => u.Email == User.Identity.Name);
+            int z = 0;
+            foreach (OwnerModels s in x)
+            {
+                z = s.ID;
+            }
+            ViewBag.CarID = new SelectList(db.Car.Where(u => u.OwnerID == z), "ID", "Brand");
             return View(partModels);
         }
 

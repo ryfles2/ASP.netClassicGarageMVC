@@ -511,3 +511,5 @@ C:\Users\Ryfles\Desktop\ASP.netClassicGarageMVC\classicGarage\classicGarage\obj\
 C:\Users\Ryfles\Desktop\ASP.netClassicGarageMVC\classicGarage\classicGarage\obj\Debug\classicGarage.Migrations.FirstMig3.resources
 C:\Users\Ryfles\Desktop\ASP.netClassicGarageMVC\classicGarage\classicGarage\obj\Debug\classicGarage.Migrations.FirstMig4.resources
 C:\Users\Ryfles\Desktop\ASP.netClassicGarageMVC\classicGarage\classicGarage\obj\Debug\classicGarage.Migrations.FirstMig5.resources
+C:\Users\Ryfles\Desktop\ASP.netClassicGarageMVC\classicGarage\classicGarage\obj\Debug\classicGarage.Migrations.FirstMig6.resources
+C:\Users\Ryfles\Desktop\ASP.netClassicGarageMVC\classicGarage\classicGarage\obj\Debug\classicGarage.Migrations.FirstMig7.resources

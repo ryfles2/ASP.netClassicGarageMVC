@@ -225,6 +225,14 @@
     <Compile Include="Migrations\201802010121290_FirstMig5.Designer.cs">
       <DependentUpon>201802010121290_FirstMig5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802011811487_FirstMig6.cs" />
+    <Compile Include="Migrations\201802011811487_FirstMig6.Designer.cs">
+      <DependentUpon>201802011811487_FirstMig6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802011851285_FirstMig7.cs" />
+    <Compile Include="Migrations\201802011851285_FirstMig7.Designer.cs">
+      <DependentUpon>201802011851285_FirstMig7.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdModels.cs" />
@@ -322,6 +330,7 @@
     <Content Include="Views\Repair\Details.cshtml" />
     <Content Include="Views\Repair\Edit.cshtml" />
     <Content Include="Views\Repair\Index.cshtml" />
+    <Content Include="Views\Car\DetailsOwner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -357,6 +366,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802010121290_FirstMig5.resx">
       <DependentUpon>201802010121290_FirstMig5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802011811487_FirstMig6.resx">
+      <DependentUpon>201802011811487_FirstMig6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802011851285_FirstMig7.resx">
+      <DependentUpon>201802011851285_FirstMig7.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

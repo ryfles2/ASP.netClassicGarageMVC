@@ -85,6 +85,7 @@ namespace classicGarage.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(ownerModels).State = EntityState.Modified;
+                ownerModels.Email = User.Identity.Name;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

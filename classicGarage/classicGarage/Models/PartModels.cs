@@ -16,6 +16,8 @@ namespace classicGarage.Models
         public DateTime DatePurchase { get; set; }
         public DateTime DateSale { get; set; }
 
+        public String Mail { get; set; }
+
         public virtual CarModels Car { get; set; }
     }
 }

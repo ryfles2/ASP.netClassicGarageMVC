@@ -32,5 +32,6 @@ namespace classicGarage.Models
         public int OwnerID { get; set; }
 
         public virtual OwnerModels owner { get; set; }//bo jeden właściciel
+
     }
 }
