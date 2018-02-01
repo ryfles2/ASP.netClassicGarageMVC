@@ -20,20 +20,28 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
+    
     <tr>
+@if (item.Mail == User.Identity.Name)
+{
         <td>
             @Html.DisplayFor(modelItem => item.Car.Brand)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Active)
         </td>
+        
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
             @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
         </td>
+        }
+        
     </tr>
-}
+        
+    }
 
 </table>

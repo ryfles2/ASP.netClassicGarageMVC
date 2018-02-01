@@ -1,0 +1,138 @@
+﻿@*@model IEnumerable<classicGarage.Models.CarModels>*@
+@model IEnumerable<classicGarage.Models.AdModels>
+@using classicGarage.Models;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<font color="orange">
+    <h2>Cars</h2>
+</font>
+
+@if (User.Identity.IsAuthenticated)
+{
+    @Html.ActionLink("Create New", "Create", "Car")
+}
+else
+{
+    <h4>Login to add</h4>
+    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+
+
+}
+
+<table class="table">
+    <tr>
+        <th>
+
+        </th>
+        <th>
+            Owner
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car.VIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car.Name)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Car.DatePurchase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car.DateSale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car.PurchasePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car.SellingPrice)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+
+            {
+            <td>
+                @{
+                    String url = item.Car.PhotoAdress;
+
+
+                }
+                <img src="@url" height="300" width="500">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.owner.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.VIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.Name)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.DatePurchase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.DateSale)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.PurchasePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.SellingPrice)
+            </td>
+
+            <td></td>
+
+            @if (item.Car.owner.Email == User.Identity.Name)
+                {
+                <td>
+                    @Html.ActionLink("Details", "DetailsOwner", "Car", new { id = item.Car.ID }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Car.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Car.ID })
+
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.Car.ID });
+                </td>
+            }
+
+
+
+
+            }
+        </tr>
+
+      }
+
+
+</table>

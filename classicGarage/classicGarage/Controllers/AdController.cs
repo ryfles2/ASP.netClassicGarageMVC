@@ -21,6 +21,11 @@ namespace classicGarage.Controllers
             var ad = db.Advertisement.Include(a => a.Car);
             return View(ad.ToList());
         }
+        public ActionResult CarView()
+        {
+            var ad = db.Advertisement.Include(a => a.Car);
+            return View(ad.ToList());
+        }
 
         // GET: Ad/Details/5
         public ActionResult Details(int? id)
@@ -59,6 +64,7 @@ namespace classicGarage.Controllers
         {
             if (ModelState.IsValid)
             {
+                adModels.Mail = User.Identity.Name;
                 db.Advertisement.Add(adModels);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -100,6 +106,7 @@ namespace classicGarage.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(adModels).State = EntityState.Modified;
+                adModels.Mail = User.Identity.Name;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
