@@ -12,7 +12,7 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    @Html.ActionLink("Create New", "Create", "Car")
+    @Html.ActionLink("Create New", "CarCreate", "Ad")
 }
 else
 {
@@ -64,9 +64,9 @@ else
 
     @foreach (var item in Model)
     {
-
+    
         <tr>
-
+        @if(item.Active==true)
             {
             <td>
                 @{
@@ -110,19 +110,21 @@ else
 
             <td></td>
 
-            @if (item.Car.owner.Email == User.Identity.Name)
+            if (item.Car.owner.Email == User.Identity.Name)
                 {
+                
                 <td>
-                    @Html.ActionLink("Details", "DetailsOwner", "Car", new { id = item.Car.ID }) |
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Car.ID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Car.ID })
+                    
+                    @Html.ActionLink("Details", "CarDetailsOwner", new { id = item.Car.ID }) |
+                    @Html.ActionLink("Edit", "CarEdit", new { id = item.Car.ID }) |
+                    @Html.ActionLink("Delete", "CarDelete",new { id = item.Car.ID })
 
                 </td>
             }
             else
             {
                 <td>
-                    @Html.ActionLink("Details", "Details", new { id = item.Car.ID });
+                    @Html.ActionLink("Details", "CarDetails", new { id = item.Car.ID });
                 </td>
             }
 

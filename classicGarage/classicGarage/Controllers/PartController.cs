@@ -60,7 +60,7 @@ namespace classicGarage.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+                partModels.Mail = User.Identity.Name;
                 db.Part.Add(partModels);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -103,6 +103,7 @@ namespace classicGarage.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(partModels).State = EntityState.Modified;
+                partModels.Mail = User.Identity.Name;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

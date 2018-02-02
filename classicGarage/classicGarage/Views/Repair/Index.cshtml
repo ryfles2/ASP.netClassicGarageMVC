@@ -28,8 +28,7 @@
 
 @foreach (var item in Model) {
     <tr>
-        @if (item.Mail == User.Identity.Name)
-        {
+       
             <td>
                 @Html.DisplayFor(modelItem => item.Car.Brand)
             </td>
@@ -42,14 +41,27 @@
             <td>
                 @Html.DisplayFor(modelItem => item.RepairCost)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
-
-        }
+@if (item.Mail == User.Identity.Name)
+{
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+}
+else
+{
+    <td>
+       
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) 
         
+    </td>
+}
+
+
+
+
+
     </tr>
 }
 
