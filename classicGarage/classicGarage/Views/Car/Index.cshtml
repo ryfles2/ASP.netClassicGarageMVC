@@ -10,12 +10,12 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
 }
 else
 {
     <h4>Login to add</h4>
-        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+        @*<li>@Html.ActionLink("Login", "Login", "Account")</li>*@
 
 
 }
@@ -64,8 +64,8 @@ else
     {
 
         <tr>
-          
-            {
+          @if (item.owner.Email == User.Identity.Name)
+              {
             <td>
                 @{
                     String url = item.PhotoAdress;
@@ -112,7 +112,7 @@ else
                 
             </td>
             
-                @if (item.owner.Email == User.Identity.Name)
+                if (item.owner.Email == User.Identity.Name)
                 {
                     <td>
                         @Html.ActionLink("Details", "DetailsOwner", new { id = item.ID }) |
